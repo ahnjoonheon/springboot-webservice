@@ -17,7 +17,6 @@ import javax.servlet.http.HttpSession;
 public class IndexController
 {
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user)
@@ -25,7 +24,7 @@ public class IndexController
         model.addAttribute("posts", postsService.findAllDesc());
 
         if (user != null)
-            model.addAttribute("userName", user.getName());
+            model.addAttribute("loginUserName", user.getName());
 
         return "index";
     }
