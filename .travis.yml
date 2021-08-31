@@ -17,7 +17,7 @@ before_install:
   - chmod +x ./gradlew
 
 before_deploy:
-  - zip -r springboot-webservice
+  - zip -r springboot-webservice.zip /*
   - mkdir -p deploy
   - mv springboot-webservice.zip deploy/springboot-webservice.zip
 
